@@ -1,0 +1,521 @@
+ /* Reset dan Font */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Poppins', sans-serif;
+     background: linear-gradient(to bottom, #10312d);
+     color: white;
+ }
+
+ h1,
+ h2 {
+     font-family: 'Orbitron', sans-serif;
+ }
+
+ /* Header */
+ header {
+     background: rgba(0, 0, 0, 0.9);
+     padding: 10px 20px;
+     position: sticky;
+     top: 0;
+     z-index: 10;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .logo {
+     font-size: 24px;
+     color: #4bf508;
+     font-style: italic;
+     font-weight: 700;
+ }
+
+ nav {
+     display: flex;
+     gap: 20px;
+ }
+
+ nav a {
+     color: white;
+     text-decoration: none;
+     font-weight: 500;
+     padding: 10px;
+     transition: color 0.3s;
+ }
+
+ nav a:hover {
+     color: #35ff61;
+ }
+
+ .search {
+     display: flex;
+     align-items: center;
+ }
+
+ .search input {
+     padding: 5px;
+     border: none;
+     border-radius: 5px;
+ }
+
+ .search button {
+     background: #35ff68;
+     color: white;
+     border: none;
+     padding: 5px 10px;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+
+ /* Hamburger Menu */
+ .hamburger {
+     display: none;
+     font-size: 24px;
+     cursor: pointer;
+     color: white;
+ }
+
+ .hamburger:hover {
+     color: #35ff46;
+ }
+
+ /* Slide Hero */
+ .hero-slider {
+     position: relative;
+     width: 100%;
+     height: 400px;
+     overflow: hidden;
+ }
+
+ .slide {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     align-items: flex-end;
+     justify-content: flex-start;
+     padding: 20px;
+     opacity: 0;
+     transition: opacity 0.5s;
+ }
+
+ .slide.active {
+     opacity: 1;
+ }
+
+ .slide::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+ }
+
+ .slide-content {
+     position: relative;
+     z-index: 1;
+     max-width: 400px;
+ }
+
+ .slide h1 {
+     font-size: 32px;
+     margin-bottom: 10px;
+     font-weight: bold;
+     color: #ffffff;
+ }
+
+ .slide p {
+     font-size: 16px;
+     margin-bottom: 20px;
+     color: #ffffff;
+ }
+
+ .btn {
+     background: linear-gradient(45deg, #7fff35, #22dd3b);
+     color: white;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 25px;
+     cursor: pointer;
+     font-weight: bold;
+     transition: transform 0.3s;
+ }
+
+ .btn:hover {
+     transform: scale(1.05);
+     box-shadow: 0 0 10px #35ff9a;
+ }
+
+ .hero-slider {
+     position: relative;
+     width: 100%;
+     height: 60vh;
+ }
+
+ .slide {
+     width: 100%;
+     height: 100%;
+ }
+
+ .hero-slider .slide::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background: rgba(0, 0, 0, 0.45);
+     /* gelap sedikit */
+ }
+       /* CSS untuk Modal Top-Up */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #04752f;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .topup-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .topup-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            background: #a8a8a8;
+        }
+
+        .topup-item button {
+            background: #1eff00;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .topup-item button:hover {
+            background: #e66a00;
+        }
+
+        /* Responsif untuk Modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .topup-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+ @media (max-width: 768px) {
+     .hero-slider .slide::before {
+         filter: blur(12px);
+         transform: scale(1.08);
+     }
+ }
+
+ .indicators {
+     position: absolute;
+     bottom: 20px;
+     left: 50%;
+     transform: translateX(-50%);
+     display: flex;
+     gap: 10px;
+ }
+
+ .indicator {
+     width: 10px;
+     height: 10px;
+     background: white;
+     border-radius: 50%;
+     cursor: pointer;
+ }
+
+ .indicator.active {
+     background: #ff6b35;
+ }
+
+ /* Grid Game */
+ .games-section {
+     padding: 20px;
+ }
+
+ .games-section h2 {
+     margin-bottom: 20px;
+     font-size: 28px;
+ }
+
+ .games-grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 20px;
+ }
+
+ .game-card {
+     background: rgba(255, 255, 255, 0.1);
+     border: 1px solid white;
+     border-radius: 10px;
+     padding: 20px;
+     text-align: center;
+     transition: transform 0.3s, box-shadow 0.3s;
+ }
+
+ .game-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 5px 15px rgba(0, 77, 64, 0.5);
+ }
+
+ .game-logo {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     margin: 0 auto 10px;
+     background: #ccc;
+     background-size: cover;
+     background-position: center;
+ }
+
+ .rating {
+     color: #ff6b35;
+     margin: 10px 0;
+ }
+
+
+ /* CSS Footer */
+ .footer {
+     background: linear-gradient(135deg, #1a1a1a, #333);
+     color: #fff;
+     padding: 40px 20px 20px;
+     text-align: center;
+     font-family: Arial, sans-serif;
+ }
+
+ .footer-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     max-width: 1200px;
+     margin: 0 auto;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+
+ .footer-logo {
+     flex: 1;
+     min-width: 200px;
+ }
+
+ .footer-logo h2 {
+     margin: 0;
+     font-size: 28px;
+     color: #15ff00;
+     font-style: italic;
+ }
+
+ .footer-logo p {
+     margin: 5px 0 0;
+     font-size: 14px;
+     font-style: italic;
+     color: #ccc;
+ }
+
+ .footer-nav {
+     flex: 2;
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+ }
+
+ .footer-nav a {
+     color: #fff;
+     text-decoration: none;
+     font-size: 16px;
+     transition: color 0.3s;
+ }
+
+ .footer-nav a:hover {
+     color: #ff7a00;
+ }
+
+ .footer-social {
+     flex: 1;
+     display: flex;
+     justify-content: flex-end;
+     gap: 15px;
+ }
+
+ .footer-social a {
+     color: #fff;
+     font-size: 24px;
+     transition: color 0.3s, transform 0.3s;
+ }
+
+ .footer-social a:hover {
+     color: #ff7a00;
+     transform: scale(1.1);
+ }
+
+ .footer-line {
+     max-width: 1200px;
+     margin: 20px auto 0;
+     border: none;
+     height: 1px;
+     background: #555;
+ }
+
+ .footer-bottom {
+     max-width: 1200px;
+     margin: 20px auto 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 10px;
+ }
+
+ .footer-bottom p {
+     margin: 0;
+     font-size: 14px;
+     color: #ccc;
+ }
+
+ .footer-bottom .contact {
+     display: flex;
+     gap: 20px;
+ }
+
+ .footer-bottom .contact a {
+     color: #ccc;
+     text-decoration: none;
+     font-size: 14px;
+ }
+
+ .footer-bottom .contact a:hover {
+     color: #ff7a00;
+ }
+
+ /* Media Query untuk Tablet */
+ @media (max-width: 1024px) {
+     .footer-container {
+         flex-direction: column;
+         text-align: center;
+     }
+
+     .footer-nav {
+         justify-content: center;
+         gap: 20px;
+     }
+
+     .footer-social {
+         justify-content: center;
+     }
+
+     .footer-bottom {
+         flex-direction: column;
+         gap: 15px;
+     }
+ }
+
+ /* Media Query untuk Mobile */
+ @media (max-width: 768px) {
+     .footer-nav {
+         flex-direction: column;
+         gap: 15px;
+     }
+
+     .footer-social {
+         justify-content: center;
+         gap: 20px;
+     }
+
+     .footer-bottom .contact {
+         flex-direction: column;
+         gap: 10px;
+     }
+ }
+
+ /*End Footer Section*/
+ /* Responsif */
+ @media (max-width: 768px) {
+     .hero-slider {
+         height: 250px;
+     }
+
+     nav {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+         background: rgba(26, 26, 46, 0.9);
+         flex-direction: column;
+         gap: 0;
+         max-height: 0;
+         overflow: hidden;
+         transition: max-height 0.3s ease;
+     }
+
+     nav.open {
+         max-height: 300px;
+     }
+
+     nav a {
+         padding: 15px 20px;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+     }
+
+     .hamburger {
+         display: block;
+     }
+
+     .search {
+         display: none;
+     }
+
+     .slide h1 {
+         font-size: 24px;
+     }
+ }

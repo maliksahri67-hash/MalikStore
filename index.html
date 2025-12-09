@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Science+Gothic:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>MalikStore - Daftar Game</title>
+    <style>
+ 
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">MalikStore</div>
+        <nav id="nav-menu">
+            <a href="#">Beranda</a>
+            <a href="#">Daftar Game</a>
+            <a href="#">Top-Up</a>
+            <a href="#">Riwayat</a>
+            <a href="#">Tentang</a>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Cari game...">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="hamburger" id="hamburger">☰</div>
+    </header>
+
+    <!-- Slide Hero -->
+    <div class="hero-slider">
+        <div class="slide active" style="background-image: url('img/slideml.jpg');">
+            <div class="slide-content">
+                <h1>Top-Up Mobile Legends Diskon 15%!</h1>
+                <p>Dapatkan bonus diamond ekstra untuk hero favoritmu!</p>
+                <button class="btn">Top-Up Sekarang</button>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('img/slideff.jpg');">
+            <div class="slide-content">
+                <h1>Free Fire Top-Up Cepat & Aman!</h1>
+                <p>Paket diamond dengan bonus skin eksklusif!</p>
+                <button class="btn">Klaim Promo</button>
+            </div>
+        </div>
+        <div class="indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+    </div>
+
+    <!-- Grid Game -->
+    <section class="games-section">
+        <h2>Pilih Game Favoritmu</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-logo" style="background-image: url('img/mobile legens.png');"></div>
+                <h3>Mobile Legends</h3>
+                <div class="rating">★★★★☆ 4.8/5</div>
+                <button class="btn topup-btn" data-game="Mobile Legends">Top-Up</button>
+            </div>
+            <div class="game-card">
+                <div class="game-logo" style="background-image: url('img/free fire.png');"></div>
+                <h3>Free Fire</h3>
+                <div class="rating">★★★★☆ 4.7/5</div>
+                <button class="btn topup-btn" data-game="Free Fire">Top-Up</button>
+            </div>
+            <div class="game-card">
+                <div class="game-logo" style="background-image: url('img/pubg.jpg');"></div>
+                <h3>PUBG</h3>
+                <div class="rating">★★★★☆ 4.9/5</div>
+                <button class="btn topup-btn" data-game="PUBG">Top-Up</button>
+            </div>
+            <div class="game-card">
+                <div class="game-logo" style="background-image: url('img/ghensin impact.webp');"></div>
+                <h3>Genshin Impact</h3>
+                <div class="rating">★★★★☆ 4.6/5</div>
+                <button class="btn topup-btn" data-game="Genshin Impact">Top-Up</button>
+            </div>
+            <div class="game-card">
+                <div class="game-logo" style="background-image: url('img/valorant.png');"></div>
+                <h3>Valorant</h3>
+                <div class="rating">★★★★☆ 4.5/5</div>
+                <button class="btn topup-btn" data-game="Valorant">Top-Up</button>
+            </div>
+            <div class="game-card">
+                <div class="game-logo" style="background-image: url('img/roblox.jpg');"></div>
+                <h3>Roblox</h3>
+                <div class="rating">★★★★☆ 4.4/5</div>
+                <button class="btn topup-btn" data-game="Roblox">Top-Up</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Top-Up -->
+    <div id="topup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Top-Up untuk [Game]</h2>
+            <div class="topup-list" id="topup-list">
+                <!-- List akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>MalikStore</h2>
+                <p>Top Up Game Terpercaya</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="#">Beranda</a>
+                <a href="#">Daftar Game</a>
+                <a href="#">Top-Up</a>
+                <a href="#">Riwayat</a>
+                <a href="#">Tentang</a>
+            </nav>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Slide Hero, Hamburger, dan Modal Top-Up -->
+    <script>
+        // Slide Hero - Otomatis dan Manual
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto-slide setiap 5 detik
+        setInterval(nextSlide, 5000);
+
+        // Kontrol manual via indicator
+        indicators.forEach((ind, index) => {
+            ind.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
+        // Modal Top-Up
+        const modal = document.getElementById('topup-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const topupList = document.getElementById('topup-list');
+        const closeBtn = document.querySelector('.close');
+
+        // Data paket top-up per game
+        const topupPackages = {
+            "Mobile Legends": [
+                { item: "100 Diamond", price: "Rp 10.000" },
+                { item: "250 Diamond", price: "Rp 25.000" },
+                { item: "500 Diamond", price: "Rp 50.000" },
+                { item: "1000 Diamond", price: "Rp 100.000" }
+            ],
+            "Free Fire": [
+                { item: "100 Diamond", price: "Rp 12.000" },
+                { item: "310 Diamond", price: "Rp 35.000" },
+                { item: "520 Diamond", price: "Rp 60.000" },
+                { item: "1080 Diamond", price: "Rp 120.000" }
+            ],
+            "PUBG": [
+                { item: "60 UC", price: "Rp 15.000" },
+                { item: "325 UC", price: "Rp 75.000" },
+                { item: "660 UC", price: "Rp 150.000" },
+                { item: "1800 UC", price: "Rp 400.000" }
+            ],
+            "Genshin Impact": [
+                { item: "60 Genesis Crystals", price: "Rp 20.000" },
+                { item: "300 Genesis Crystals", price: "Rp 100.000" },
+                { item: "980 Genesis Crystals", price: "Rp 300.000" },
+                { item: "1980 Genesis Crystals", price: "Rp 600.000" }
+            ],
+            "Valorant": [
+                { item: "100 VP", price: "Rp 25.000" },
+                { item: "250 VP", price: "Rp 60.000" },
+                { item: "500 VP", price: "Rp 120.000" },
+                { item: "1000 VP", price: "Rp 240.000" }
+            ],
+            "Roblox": [
+                { item: "400 Robux", price: "Rp 50.000" },
+                { item: "800 Robux", price: "Rp 100.000" },
+                { item: "1700 Robux", price: "Rp 200.000" },
+                { item: "4500 Robux", price: "Rp 500.000" }
+            ]
+        };
+
+        // Event listener untuk tombol Top-Up
+        document.querySelectorAll('.topup-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const game = e.target.getAttribute('data-game');
+                modalTitle.textContent = `Top-Up untuk ${game}`;
+                topupList.innerHTML = '';
+                topupPackages[game].forEach(pkg => {
+                    const item = document.createElement('div');
+                    item.className = 'topup-item';
+                    item.innerHTML = `
+                        <span>${pkg.item}</span>
+                        <span>${pkg.price}</span>
+                        <button>Beli</button>
+                    `;
+                    topupList.appendChild(item);
+                });
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Tutup modal
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
